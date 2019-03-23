@@ -1,8 +1,8 @@
-print("Olá mundo")
-print("REComeçando")
-print("************")
+import random
 
-numero_secreto = 42
+print("\n\n*********************")
+print("O jogo da adivinhação")
+print("*********************",end="\n\n")
 
 # print(type(chute)) -> descobrir o tipo da variavel, já o python tem tipagem forte
 
@@ -23,8 +23,9 @@ numero_secreto = 42
 	caso coloque 1,10,2 o terceiro parâmetro vai dizer os passo para pular o laço, então seria 1,3,5,7,9 e fim do laço
 
 """
-
-
+#numero_secreto = round(random.random()*100) -> função de pseudo aleatória, round para arrendondar pra frente o número
+numero_secreto = random.randrange(1,101) # intervalor para gerear os números entre 1 até 100
+print(numero_secreto)
 
 # O usuário vai escolhar quantas vezes quer tentar adivinhar o código
 numero_de_tentativas = input("Quantas vezes você quer tentar?\n>>> ")
@@ -63,3 +64,7 @@ for rodada in range(0,numero_de_tentativas):
 
 
 print("Fim de jogo")
+
+
+# TODAS ESSAS FUNÇÕES QUE ESTUDAMOS VEMOS NA BUILD-IN,OU MELHOR SÃO FUNÇÕES BÁSICAS PARA PRIMIEIRO CONTATO COM O PYTHON
+# Java bilbiotecas são bibliotecas, mas no python é chamado de módulos
