@@ -16,10 +16,11 @@ numero_de_tentativas = input("Quantas vezes você quer tentar?\n>>> ")
 numero_de_tentativas = int(numero_de_tentativas) # no python3, o input sempre sai uma str
 rodada = 1
 
-while( rodada <= numero_de_tentativas):
+# while( rodada <= numero_de_tentativas): -> caso fosse com while
+for rodada in range(0,numero_de_tentativas):
 
-	print("Tentativa ",rodada,"/",numero_de_tentativas)
-	# print("Tentativa {} de {}",format(rodada,numero_de_tentativas)) # String interpolation, mas o valores devem ser str não int
+	#print("Tentativa ",rodada,"/",numero_de_tentativas) ->  sem usar o format
+	print("Tentativa {} de {}".format(rodada,numero_de_tentativas)) # String interpolation, mas o valores devem ser str não int
 	chute = input("Digite o número secreto:")
 	chute = int(chute)
 
@@ -41,7 +42,13 @@ while( rodada <= numero_de_tentativas):
 
 
 print("Fim de jogo")
-"""#QUAL A DIFERENLA DO PYTHON3 PARA O PYTHON2: 
-	+O PRINT MUDOU E O INPUT SEMRPE SAI COM STRING PARA O PYTHON3
 """
+#QUAL A DIFERENLA DO PYTHON3 PARA O PYTHON2: 
+	+O PRINT MUDOU E O INPUT SEMRPE SAI COM STRING PARA O PYTHON3
 
+ #range é mais flexivel, e no for você não precisa usar parenteses , mas é aconselhavel
+	rodada = 1
+	for rodada in range(1,10):
+		print(rodada,":)))")
+
+"""
