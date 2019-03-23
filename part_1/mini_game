@@ -16,10 +16,4 @@ if(numero_secreto == chute):
 else:
 	print("Que pena, não foi")
 
-"""#QUAL A DIFERENLA DO PYTHON3 PARA O PYTHON2: 
-	+O PRINT MUDOU E O INPUT SEMRPE SAI COM STRING PARA O PYTHON3
-
-	Sintax_Sugar: o doce do python que já converter o tipos para fazer uma multiplicação
-	, ou seja, converter um tipo para que a operação não cause o prbelmas comuns.
-
-"""
+#QUAL A DIFERENÃ DO PYTHON3 PARA O PYTHON2
