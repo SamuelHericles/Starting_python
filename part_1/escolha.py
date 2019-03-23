@@ -1,6 +1,12 @@
 import forca
 import mini_game
 
+# PYTHON É INTERPRETADO E C É COMPILADO
+# NO PYTHON É DIRETO EXECUTADO, PODE RODAR EM QUALQUER SO, COMPILA AO VIVO, MAS É UMA HIBRIDA DE COMPILAÇÃO E INTERPRETAÇÃO
+# NO C PRECISO CRIAR UM EXECUTAVEL POIS JÁ FOI COMPILADO, ENTÃO É PRECISO RECOMPILAR EM OUTRO SO
+
+
+
 def escolha_jogo():
 	print("***************************")
 	print("Escolha seu jogo!")
