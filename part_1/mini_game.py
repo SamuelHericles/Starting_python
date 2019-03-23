@@ -22,6 +22,8 @@ print("*********************",end="\n\n")
 	detalhe, só vai até o 9, ou seja, de 1 até 9
 	caso coloque 1,10,2 o terceiro parâmetro vai dizer os passo para pular o laço, então seria 1,3,5,7,9 e fim do laço
 
+interger division: 3//2 , devolve um inteiro sem arredondar
+
 """
 
 # Pontos iniciais
