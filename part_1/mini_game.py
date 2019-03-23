@@ -19,7 +19,7 @@ rodada = 1
 while( rodada <= numero_de_tentativas):
 
 	print("Tentativa ",rodada,"/",numero_de_tentativas)
-
+	# print("Tentativa {} de {}",format(rodada,numero_de_tentativas)) # String interpolation, mas o valores devem ser str não int
 	chute = input("Digite o número secreto:")
 	chute = int(chute)
 
