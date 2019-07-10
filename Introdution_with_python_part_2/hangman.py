@@ -1,39 +1,39 @@
 import random
-def jogar():
+def play():
 
 	abertura()
-	palavra_secreta = escolhe_a_palavra_secreta()
-	letras_acertadas =cria_lista_lacuna(palavra_secreta) 
+	secret_word = choose_word_secret()
+	right_lyrics =create_list_gap(secret_word) 
 
-	enforcou = False
-	acertou = False 
-	tentativas = 0
+	hanged = False
+	hit = False 
+	attmeps = 0
 
-	print(letras_acertadas)
-	#enquanto não acertou ou enforcou
-	#enquanto (TRUE E TRUE)
-	while(not acertou and not enforcou):
+	print(right_lyrics)
+	#while not right or hanged
+	#while (TRUE and TRUE)
+	while(not hit and not hanged):
 
-			chute = pede_chute()
+			kick = ask_kick()
 
-			if(chute in palavra_secreta):
-				marca_chute_correto(chute,palavra_secreta,letras_acertadas)
+			if(kick in secret_word):
+				correct_kick(kick,secret_word,right_lyrics)
 			else:
-				tentativas += 1
-				desenha_forca(tentativas)
+				attempts += 1
+				draws_hangman(attempts)
 
-			enforcou = tentativas == 7
-			acertou = "_" not in letras_acertadas
-			print(letras_acertadas)
-	if(acertou):
-		imprime_mensagem_vencedor()
+			hanged = attempts == 7
+			hit = "_" not in right_lyrics
+			print(right_lyrics)
+	if(hit):
+		print_winning_message()
 	else:
-		imprime_mensagem_perdedor(palavra_secreta)
+		print_lost_message(secret_word)
 
 
-def imprime_mensagem_perdedor(palavra_secreta):
-    print("Puxa, você foi enforcado!")
-    print("A palavra era {}".format(palavra_secreta))
+def print_lost_message(secret_word):
+    print("Sorry, you was hanged!")
+    print("The word was {}".format(secret_word))
     print("    _______________         ")
     print("   /               \       ")
     print("  /                 \      ")
@@ -53,8 +53,8 @@ def imprime_mensagem_perdedor(palavra_secreta):
 
 
 
-def imprime_mensagem_vencedor():
-    print("Parabéns, você ganhou!")
+def print_winning_message():
+    print("Congratulations, you are winner!")
     print("       ___________      ")
     print("      '._==_==_=_.'     ")
     print("      .-\\:      /-.    ")
@@ -66,7 +66,7 @@ def imprime_mensagem_vencedor():
     print("         _.' '._        ")
     print("        '-------'       ")
 
-def desenha_forca(erros):
+def draws_hangman(erros):
     print("  _______     ")
     print(" |/      |    ")
 
@@ -116,39 +116,40 @@ def desenha_forca(erros):
     print("_|___         ")
     print()
 
-def marca_chute_correto(chute,palavra_secreta,letras_acertadas):
+def correct_kick(kick,secret_word,right_lyrics):
 	index = 0
-	for letra in palavra_secreta:				
-		if(chute == letra):
-			#print("Econtrei a letra {} a posição {}".format(letra,index))
-			letras_acertadas[index] = letra # colcoar index para add ao indice e mostrar ele no print
+	for letter in secret_word:				
+		if(kick == letter):
+            # put index to add to index and show it in print
+			right_lyrics[index] = letter
 		index +=1
 	
 
-def pede_chute():
-	chute = input('Digite uma letra\n>>> ')
-	return chute.strip().upper()
+def ask_kick():
+	kick = input('Digite uma letter\n>>> ')
+	return kick.strip().upper()
 
-def abertura():
-	print("*************************************")
-	print("*****Bem vindo ao jogo da Forca!*****")
-	print("*************************************")
+def opening():
 
-def escolhe_a_palavra_secreta():
-	arquivo = open("palavras.txt","r")
-	palavras = []
+    print("***************************")
+    print("Welcome to the hangman game")
+    print("***************************")
 
-	for linha in arquivo:
-		linha = linha.strip()
-		palavras.append(linha)
+def choose_word_secret():
+	file = open("words.txt","r")
+	words = []
+
+	for line in file:
+		line = line.strip()
+		words.append(line)
 	
-	arquivo.close()
+	file.close()
 
-	numero = random.randrange(0,len(palavras))
-	return palavras[numero].upper()
+	number = random.randrange(0,len(words))
+	return words[number].upper()
 
-def cria_lista_lacuna(palavra):
-	return ["_" for letra in palavra] # list compreenshions
+def create_list_gap(word):
+	return ["_" for letter in word] # list compreenshions
 
 if(__name__ == "__main__"):
-	jogar()
+	play()

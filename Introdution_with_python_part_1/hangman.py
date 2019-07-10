@@ -1,5 +1,5 @@
-def jogar():
+def play():
 
 	print("***************************")
-	print("Bem vindo ao jogo da Forca!")
+	print("Welcome to the hangman game")
 	print("***************************")

@@ -1,2 +1,0 @@
-class LanceInvalido(BaseException):
-    pass
